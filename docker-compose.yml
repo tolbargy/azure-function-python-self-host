@@ -1,8 +1,8 @@
 version: '3'  
 services:
-  functions-3.0-local:
-    image: tolbargy/functions-3.0-local
-    container_name: functions-3.0-local
+  azurefunctionslocal:
+    image: tolbargy/azurefunctionslocal
+    container_name: azurefunctionslocal
     build: 
       context: ./
     ports:  
