@@ -1,0 +1,17 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "type": "eventGridTrigger",
+      "name": "event",
+      "direction": "in"
+    },
+    {
+      "name": "inputblob",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "queue-main",
+      "connection": "drontestbus_SERVICEBUS"
+    }
+  ]
+}
