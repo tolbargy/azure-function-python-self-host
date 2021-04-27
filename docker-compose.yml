@@ -3,6 +3,8 @@ services:
   azurefunctionslocal:
     image: tolbargy/azurefunctionslocal
     container_name: azurefunctionslocal
+    environment:
+      drontestbus_SERVICEBUS: ${drontestbus_SERVICEBUS}
     build: 
       context: ./
     ports:  
