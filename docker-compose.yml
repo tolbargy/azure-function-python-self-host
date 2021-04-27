@@ -1,0 +1,9 @@
+version: '3'  
+services:
+  functions-3.0-local:
+    image: tolbargy/functions-3.0-local
+    container_name: functions-3.0-local
+    build: 
+      context: ./
+    ports:  
+    - "8080:80"
