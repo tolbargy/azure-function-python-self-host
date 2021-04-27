@@ -5,6 +5,7 @@ services:
     container_name: azurefunctionslocal
     environment:
       drontestbus_SERVICEBUS: ${drontestbus_SERVICEBUS}
+      AzureWebJobsStorage: ${AzureWebJobsStorage}
     build: 
       context: ./
     ports:  

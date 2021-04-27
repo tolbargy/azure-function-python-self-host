@@ -4,14 +4,6 @@ import requests
 
 import azure.functions as func
 
-def main(event: func.EventGridEvent, inputblob: func.InputStream):
-    eventData = event.get_json()
-
-    url = eventData['url']
-    logging.info('Python DetectBadItems function started processing a blob file: %s', url)
-    logging.info(eventData)
-    logging.info(inputblob)
-
-    if inputblob:
-        processImage(img_bytes=inputblob.read(), url=url)
-        logging.info('Python DetectBadItems function finished processing a blob file: %s', url)
+def main(servicebus: func.ServiceBusMessage, inputblob: func.InputStream):
+    logging.info('Python DetectBadItems function started processing a message service bus: %s', servicebus)
+    logging.info('Python DetectBadItems function started processing a blob file: %s', inputblob.name)    

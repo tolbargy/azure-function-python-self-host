@@ -2,16 +2,19 @@
   "scriptFile": "__init__.py",
   "bindings": [
     {
-      "type": "eventGridTrigger",
-      "name": "event",
-      "direction": "in"
-    },
-    {
-      "name": "inputblob",
+      "name": "servicebus",
       "type": "serviceBusTrigger",
       "direction": "in",
       "queueName": "queue-main",
       "connection": "drontestbus_SERVICEBUS"
+    },
+    {
+      "name": "inputblob",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "{data.url}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
     }
   ]
 }
